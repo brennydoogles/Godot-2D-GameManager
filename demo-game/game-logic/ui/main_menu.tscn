@@ -13,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_unopq")
+metadata/_custom_type_script = "uid://bxnyjne0oltx4"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
