@@ -8,9 +8,13 @@
 
 config_version=5
 
+[addons]
+
+markdown_book/docs_folder=""
+
 [application]
 
-config/name="GameEngine"
+config/name="GameManager"
 run/main_scene="uid://d0lsxr16kke5f"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"

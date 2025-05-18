@@ -4,12 +4,11 @@ extends Node2D
 @export var level_holder: Node
 @export var player: AbstractPlayer
 
-var level_map: Dictionary[String, Level] = {} 
+var level_map: Dictionary[String, AbstractLevel] = {} 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameStateEvents.SCENE_CHANGE_REQUESTED.connect(handle_scene_change_requested)
-	
 
 func is_valid_level(levelName: String) -> bool:
 	if level_map.has(levelName):
@@ -17,8 +16,8 @@ func is_valid_level(levelName: String) -> bool:
 	var scene: PackedScene = load(levelName)
 	if not scene:
 		return false
-	var level: Level = scene.instantiate()
-	if level and level is Level:
+	var level: AbstractLevel = scene.instantiate()
+	if level and level is AbstractLevel:
 		level_map.set(levelName, level)
 		return true
 	else:
@@ -28,7 +27,7 @@ func handle_scene_change_requested(requestedScene: String) -> void:
 	print("Scene change requested to " + requestedScene)
 	if is_valid_level(requestedScene):
 		print(requestedScene + " is a valid Level")
-		var level: Level = level_map.get(requestedScene)
+		var level: AbstractLevel = level_map.get(requestedScene)
 		if not player or player is not AbstractPlayer:
 			print("There is no player, we cannot proceed")
 			return

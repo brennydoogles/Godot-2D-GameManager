@@ -1,4 +1,4 @@
-class_name Level
+class_name AbstractLevel
 extends Node2D
 
 @export var player: AbstractPlayer
