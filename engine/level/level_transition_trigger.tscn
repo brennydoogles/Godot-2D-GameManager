@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bei0r46t38cbd"]
+
+[ext_resource type="Script" uid="uid://tkp2ac7r5st0" path="res://engine/level/level_transition_trigger.gd" id="1_us2bx"]
+
+[node name="LevelTransitionTrigger" type="Area2D"]
+script = ExtResource("1_us2bx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

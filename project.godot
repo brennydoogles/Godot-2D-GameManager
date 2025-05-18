@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="GameEngine"
+run/main_scene="uid://d0lsxr16kke5f"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameStateEvents="*res://engine/event-bus/game-state-events.gd"
+PlayerStateEvents="*res://demo-game/game-logic/event-bus/player-state-events.gd"
+GlobalConstants="*res://demo-game/game-logic/autoload/global_constants.gd"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

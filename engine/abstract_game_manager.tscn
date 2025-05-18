@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl8aqq8sxkssu"]
+
+[ext_resource type="Script" uid="uid://eq1kks3b70ps" path="res://engine/abstract_game_manager.gd" id="1_xixy6"]
+
+[node name="AbstractGameManager" type="Node2D"]
+script = ExtResource("1_xixy6")
