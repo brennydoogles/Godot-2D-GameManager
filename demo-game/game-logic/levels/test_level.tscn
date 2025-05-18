@@ -21,6 +21,8 @@ tile_set = ExtResource("2_fhrfl")
 
 [node name="PlayerStart" type="StaticBody2D" parent="."]
 position = Vector2(40, 40)
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerStart"]
 shape = SubResource("RectangleShape2D_fhrfl")
