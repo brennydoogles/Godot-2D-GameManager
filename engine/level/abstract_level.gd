@@ -1,3 +1,4 @@
+@icon("uid://bg1slm8h47wey")
 class_name AbstractLevel
 extends Node2D
 

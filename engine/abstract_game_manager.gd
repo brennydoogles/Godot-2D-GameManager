@@ -1,3 +1,4 @@
+@icon("uid://n6jp7e16vy1h")
 class_name AbstractGameManager
 extends Node2D
 
@@ -26,22 +27,16 @@ func is_valid_level(levelName: String) -> bool:
 		return false
 
 func handle_scene_change_requested(requestedScene: String) -> void:
-	print("Scene change requested to " + requestedScene)
-	if is_valid_level(requestedScene):
-		print(requestedScene + " is a valid Level")
-		var level: AbstractLevel = level_map.get(requestedScene)
-		if not player or player is not AbstractPlayer:
-			print("There is no player, we cannot proceed")
-			return
-		level.player = player
-		if not player.is_inside_tree():
-			self.add_child(player)
-		if not level_holder:
-			print("The Level is missing a LevelHolder (of type StaticBody2D), we cannot proceed")
-			return
-		var existing_level := level_holder.get_children()
-		level_holder.add_child(level)
-		for child in existing_level:
-			child.queue_free()
-	else:
-		print(requestedScene + " is not a valid Level")
+	assert(is_valid_level(requestedScene), requestedScene + " is not a valid Level")
+	assert(player, "There is no player, we cannot change scenes")
+	assert(player is AbstractPlayer, "The player must be of type AbstractPlayer to work with GameManager")
+	assert(level_holder, "The GameManager is missing a LevelHolder, we cannot proceed")
+	var level: AbstractLevel = level_map.get(requestedScene)
+	level.player = player
+	if not player.is_inside_tree():
+		self.add_child(player)
+	var existing_level := level_holder.get_children()
+	level_holder.add_child(level)
+	for child in existing_level:
+		child.queue_free()
+	
