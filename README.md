@@ -14,9 +14,9 @@ This folder contains a demo-game which will (as development progresses) hold a s
 
 #### AbstractGameManager
 This class is the star of the show. AbstractGameManager provides the base functionality for the whole library. It currently requires two export vars to be set in order function. These are:
- * level_holder: Node
- 	* Level Holder is the Node that the GameManager wants all new Level scenes loaded into.
- * player: AbstractPlayer
+ * Level Container: Node
+ 	* Level Container is the Node that the GameManager wants all new Level scenes loaded into.
+ * Player: AbstractPlayer
  	* Player represents the player object which will be added to each scene when it loads
 
 #### AbstractPlayer
@@ -39,5 +39,5 @@ This script, which extends Node (and will probably be renamed to AbstractGameSta
 ### Game Manager Signals
 The following signals may be emitted or called in order to work with the Game Manager.
 
-#### SCENE_CHANGE_REQUESTED(requestedScene: String)
-This signal may be emitted at any point to request that the GameManager change the active scene to any other scene. It will first verify that the requested scene exists and is of a type which descends from AbstractLevel, before passing in the player and loading the scene.
+#### LEVEL_CHANGE_REQUESTED(requestedLevel: String)
+This signal may be emitted at any point to request that the GameManager change the active Level to any other Level. It will first verify that the requested scene exists and is of a type which descends from AbstractLevel, before passing in the player and loading the scene. Where possible it is recommended to use the UID of a scene rather than its path to allow easier refactoring of the project.

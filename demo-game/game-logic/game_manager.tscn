@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://bnkaobyaek6jb" path="res://demo-game/game-logic/ui/main_menu.tscn" id="2_rqvn2"]
 [ext_resource type="PackedScene" uid="uid://d2evvcohqktdy" path="res://demo-game/game-logic/player/player.tscn" id="3_117uc"]
 
-[node name="AbstractGameManager" node_paths=PackedStringArray("level_holder", "player", "main_menu") instance=ExtResource("1_ljt67")]
-level_holder = NodePath("LevelHolder")
+[node name="AbstractGameManager" node_paths=PackedStringArray("level_container", "player", "main_menu") instance=ExtResource("1_ljt67")]
+level_container = NodePath("LevelContainer")
 player = NodePath("Player")
-main_menu = NodePath("LevelHolder/MainMenu")
+main_menu = NodePath("LevelContainer/MainMenu")
 
-[node name="LevelHolder" type="Node" parent="." index="0"]
+[node name="LevelContainer" type="Node" parent="." index="0"]
 
-[node name="MainMenu" parent="LevelHolder" index="0" instance=ExtResource("2_rqvn2")]
+[node name="MainMenu" parent="LevelContainer" index="0" instance=ExtResource("2_rqvn2")]
 
 [node name="Player" parent="." index="1" instance=ExtResource("3_117uc")]
 z_index = 15

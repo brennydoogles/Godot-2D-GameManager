@@ -2,4 +2,4 @@ extends Node
 
 
 signal SHOW_MENU_REQUESTED
-signal SCENE_CHANGE_REQUESTED(requestedScene: String)
+signal LEVEL_CHANGE_REQUESTED(requestedLevel: String)
