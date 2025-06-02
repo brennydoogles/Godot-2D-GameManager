@@ -6,9 +6,6 @@
 [ext_resource type="Script" uid="uid://ckv2rycryergm" path="res://demo-game/game-logic/player/state-machine/movement/idle_movement_state.gd" id="4_xneso"]
 [ext_resource type="Script" uid="uid://bmcqmt4pcidd5" path="res://demo-game/game-logic/player/state-machine/movement/moving_movement_state.gd" id="5_25v7p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj76e"]
-size = Vector2(16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_chypj"]
 atlas = ExtResource("2_ev86i")
 region = Rect2(0, 0, 16, 16)
@@ -177,12 +174,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25v7p"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
 [node name="Player" type="CharacterBody2D"]
+disable_mode = 2
 script = ExtResource("1_x65kf")
 metadata/_custom_type_script = "uid://q2gkp1tjogf"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_cj76e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gtcbp")
@@ -212,15 +211,22 @@ metadata/_custom_type_script = "uid://ckupstarn6tbt"
 [node name="RayCastSouth" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
 target_position = Vector2(0, 8)
+hit_from_inside = true
 
 [node name="RayCastNorth" type="RayCast2D" parent="."]
 position = Vector2(0, -8)
 target_position = Vector2(0, -8)
+hit_from_inside = true
 
 [node name="RayCastWest" type="RayCast2D" parent="."]
 position = Vector2(-8, 0)
 target_position = Vector2(-8, 0)
+hit_from_inside = true
 
 [node name="RayCastEast" type="RayCast2D" parent="."]
 position = Vector2(8, 0)
 target_position = Vector2(8, 0)
+hit_from_inside = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_25v7p")

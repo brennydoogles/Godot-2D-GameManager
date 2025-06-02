@@ -10,7 +10,6 @@ var player_return_location: StaticBody2D = null
 
 func _ready() -> void:
 	if player and player_start_location:
-		print("Loading level")
 		player.visible = false
 		player.teleport_to_position(player_start_location.position)
 		player.visible = true

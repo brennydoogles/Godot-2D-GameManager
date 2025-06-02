@@ -14,7 +14,4 @@ func _process(delta: float) -> void:
 
 
 func teleport_to_position(position : Vector2 = Vector2.ZERO) -> void:
-	print("Position is " + str(self.position.x) + ", " + str(self.position.y))
-	print("Teleporting to " + str(position.x) + ", " + str(position.y))
 	self.position = position # This might need to be self.global_position 
-	print("Position is " + str(self.position.x) + ", " + str(self.position.y))
