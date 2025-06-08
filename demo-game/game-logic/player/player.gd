@@ -1,7 +1,6 @@
 class_name Player
 extends AbstractPlayer
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var movement_state_machine: PlayerMovementStateMachine = $PlayerMovementStateMachine
 @onready var ray_cast_north: RayCast2D = $RayCastNorth

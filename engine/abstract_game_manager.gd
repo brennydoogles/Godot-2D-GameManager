@@ -14,8 +14,6 @@ func _ready() -> void:
 	player.get_parent().remove_child(player)
 
 func is_valid_level(levelName: String) -> bool:
-	if level_map.has(levelName):
-		return true
 	var scene: PackedScene = load(levelName)
 	if not scene:
 		return false
@@ -31,14 +29,17 @@ func handle_level_change_requested(requestedLevel: String) -> void:
 	assert(player, "There is no player, we cannot change scenes")
 	assert(player is AbstractPlayer, "The player must be of type AbstractPlayer to work with GameManager")
 	assert(level_container, "The GameManager is missing a LevelContainer, we cannot proceed")
-	var level: AbstractLevel = level_map.get(requestedLevel)
+	var level = level_map.get(requestedLevel)
+	assert(level is AbstractLevel, "The Loaded Level must be of type AbstractLevel to work with GameManager")
 	level.player = player
 	if not player.is_inside_tree():
 		self.add_child(player)
-	_handle_level_transition(level)
+	self.call_deferred("_handle_level_transition", level)
+	#_handle_level_transition(level)
 
 func _handle_level_transition(newLevel: AbstractLevel) -> void:
 	var level_container_children := level_container.get_children()
-	level_container.add_child(newLevel)
+	level_container.call_deferred("add_child", newLevel)
+	#level_container.add_child(newLevel)
 	for child in level_container_children:
 		child.queue_free()
