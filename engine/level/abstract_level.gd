@@ -14,7 +14,4 @@ func _ready() -> void:
 			if child is CollisionShape2D:
 				child.disabled = true
 		if player:
-			player.visible = false
-			player.teleport_to_position(player_start_location.global_position)
-			#player.move_and_slide()
-			player.visible = true
+			GameStateEvents.PLAYER_TELEPORT_REQUESTED.emit(player_start_location.global_position)

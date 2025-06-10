@@ -8,6 +8,8 @@ const TILE_SIZE: Vector2 = Vector2(GlobalConstants.TILE_SIZE, GlobalConstants.TI
 const TILE_TRANSITION_SPEED = 0.3
 var sprite_node_position_tween: Tween
 
+func _ready() -> void:
+	GameStateEvents.PLAYER_TELEPORT_REQUESTED.connect(handle_teleport_player_request)
 
 func enter() -> void:
 	super()
@@ -57,3 +59,7 @@ func _move_player(direction: Vector2) -> void:
 		).set_trans(Tween.TRANS_SINE)
 	PlayerStateEvents.PLAYER_MOVED.emit()
 	
+func handle_teleport_player_request(toLocation: Vector2):
+	if sprite_node_position_tween:
+		sprite_node_position_tween.kill()
+	parent.global_position = toLocation
