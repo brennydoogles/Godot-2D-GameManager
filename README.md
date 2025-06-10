@@ -20,7 +20,7 @@ This class is the star of the show. AbstractGameManager provides the base functi
  	* Player represents the player object which will be added to each scene when it loads
 
 #### AbstractPlayer
-This class is the base class representing a player. It extends from CharacterBody2D and has no child nodes by default. The only exposed functionality of this class is a 'teleport_to_position(location: Vector2)' function to teleport the player to a particular location, which is called by each Level in order to position the player in the correct spot when the Level is loaded.
+This class is the base class representing a player. It extends from CharacterBody2D and has no child nodes by default. 
 
 #### AbstractLevel
 This is the base class for all levels, and extends Node2D. The AbstractLevel class requires two export vars to be set in order to function properly. These are:
@@ -37,7 +37,10 @@ This is the base class for all Menus, and it extends from Control. Currently thi
 This script, which extends Node (and will probably be renamed to AbstractGameStateEvents), is an Autoloaded script which defines all of the signals the AbstractGameManager will handle or emit.
 
 ### Game Manager Signals
-The following signals may be emitted or called in order to work with the Game Manager.
+The following signals may be emitted or connected to in order to work with the Game Manager.
 
 #### LEVEL_CHANGE_REQUESTED(requestedLevel: String)
 This signal may be emitted at any point to request that the GameManager change the active Level to any other Level. It will first verify that the requested scene exists and is of a type which descends from AbstractLevel, before passing in the player and loading the scene. Where possible it is recommended to use the UID of a scene rather than its path to allow easier refactoring of the project.
+
+#### PLAYER_TELEPORT_REQUESTED(toLocation: Vector2)
+This signal will be emitted by the AbstractLevel upon load, in order for the Player scene to know to teleport to the new location. This is not automatically handled by the GameManager classes since the individual game's movement logic may have considerations to take into account during the teleportation process.
