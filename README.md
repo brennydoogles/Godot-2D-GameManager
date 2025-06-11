@@ -42,5 +42,8 @@ The following signals may be emitted or connected to in order to work with the G
 #### LEVEL_CHANGE_REQUESTED(requestedLevel: String)
 This signal may be emitted at any point to request that the GameManager change the active Level to any other Level. It will first verify that the requested scene exists and is of a type which descends from AbstractLevel, before passing in the player and loading the scene. Where possible it is recommended to use the UID of a scene rather than its path to allow easier refactoring of the project.
 
+#### LEVEL_CHANGE_WITH_START_POSITION_OVERRIDE_REQUESTED(requestedLevel: String, player_start_override: Vector2)
+This signal may be emitted at any point to request that the GameManager change the active Level to any other Level, while providing an override to the Level's default player start location. It will first verify that the requested scene exists and is of a type which descends from AbstractLevel, before passing in the player and loading the scene. Where possible it is recommended to use the UID of a scene rather than its path to allow easier refactoring of the project.
+
 #### PLAYER_TELEPORT_REQUESTED(toLocation: Vector2)
 This signal will be emitted by the AbstractLevel upon load, in order for the Player scene to know to teleport to the new location. This is not automatically handled by the GameManager classes since the individual game's movement logic may have considerations to take into account during the teleportation process.

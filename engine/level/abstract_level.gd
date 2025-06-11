@@ -4,8 +4,7 @@ extends Node2D
 
 @export var player: AbstractPlayer
 @export var player_start_location: StaticBody2D
-
-var player_return_location: StaticBody2D = null
+@export var player_start_override: Vector2
 
 
 func _ready() -> void:
@@ -14,4 +13,7 @@ func _ready() -> void:
 			if child is CollisionShape2D:
 				child.disabled = true
 		if player:
-			GameStateEvents.PLAYER_TELEPORT_REQUESTED.emit(player_start_location.global_position)
+			if player_start_override:
+				GameStateEvents.PLAYER_TELEPORT_REQUESTED.emit(player_start_override)
+			else:
+				GameStateEvents.PLAYER_TELEPORT_REQUESTED.emit(player_start_location.global_position)

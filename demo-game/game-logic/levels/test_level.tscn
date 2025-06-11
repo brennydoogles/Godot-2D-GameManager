@@ -284,7 +284,7 @@ sources/0 = SubResource("TileSetAtlasSource_ghwpc")
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj1qe"]
-size = Vector2(46, 27)
+size = Vector2(16, 16)
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("player_start_location")]
 script = ExtResource("1_efotn")
@@ -312,9 +312,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_fhrfl")
 
 [node name="LevelTransitionTrigger" parent="." instance=ExtResource("4_ghwpc")]
-position = Vector2(-39, 191)
+position = Vector2(-40, 192)
 targetSceneUid = "uid://k2cs1h6fx5ho"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelTransitionTrigger"]
-position = Vector2(-1, -4.5)
 shape = SubResource("RectangleShape2D_pj1qe")
