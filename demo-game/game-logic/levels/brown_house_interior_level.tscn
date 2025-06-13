@@ -30,7 +30,7 @@ position = Vector2(136, -72)
 shape = SubResource("RectangleShape2D_bnj36")
 
 [node name="LevelTransitionTrigger" parent="." instance=ExtResource("3_76u1l")]
-targetSceneUid = "uid://bh0edvjgscg7i"
+targetScene = "test_level"
 player_start_override = Vector2(-40, 224)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelTransitionTrigger"]

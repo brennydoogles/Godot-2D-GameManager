@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelKey" load_steps=3 format=3 uid="uid://i1i5a0is4d7w"]
+
+[ext_resource type="Script" uid="uid://dw03336mh8qq7" path="res://engine/level/level_key.gd" id="1_vp0lg"]
+[ext_resource type="PackedScene" uid="uid://bh0edvjgscg7i" path="res://demo-game/game-logic/levels/test_level.tscn" id="2_77nt8"]
+
+[resource]
+script = ExtResource("1_vp0lg")
+levelName = "test_level"
+targetScene = ExtResource("2_77nt8")
+metadata/_custom_type_script = "uid://dw03336mh8qq7"

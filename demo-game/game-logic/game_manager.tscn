@@ -1,18 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0lsxr16kke5f"]
+[gd_scene load_steps=8 format=3 uid="uid://d0lsxr16kke5f"]
 
 [ext_resource type="PackedScene" uid="uid://dl8aqq8sxkssu" path="res://engine/abstract_game_manager.tscn" id="1_ljt67"]
-[ext_resource type="PackedScene" uid="uid://bnkaobyaek6jb" path="res://demo-game/game-logic/ui/main_menu.tscn" id="2_rqvn2"]
+[ext_resource type="Script" uid="uid://dw03336mh8qq7" path="res://engine/level/level_key.gd" id="2_rnv0k"]
 [ext_resource type="PackedScene" uid="uid://d2evvcohqktdy" path="res://demo-game/game-logic/player/player.tscn" id="3_117uc"]
+[ext_resource type="Resource" uid="uid://i1i5a0is4d7w" path="res://demo-game/game-logic/levels/test_level.tres" id="3_ui180"]
+[ext_resource type="Resource" uid="uid://ce2nyotbnxdgd" path="res://demo-game/game-logic/levels/brown_house_interior.tres" id="4_ui180"]
+[ext_resource type="Script" uid="uid://ce1rjpku2o4uc" path="res://engine/menu/menu_key.gd" id="5_hhprh"]
+[ext_resource type="Resource" uid="uid://bbw12tu2mmhyk" path="res://demo-game/game-logic/ui/main_menu.tres" id="6_ek1rx"]
 
-[node name="AbstractGameManager" node_paths=PackedStringArray("level_container", "player", "main_menu") instance=ExtResource("1_ljt67")]
+[node name="AbstractGameManager" node_paths=PackedStringArray("level_container", "menu_container", "player") instance=ExtResource("1_ljt67")]
 level_container = NodePath("LevelContainer")
+menu_container = NodePath("MenuContainer")
 player = NodePath("Player")
-main_menu = NodePath("LevelContainer/MainMenu")
+main_menu = "main_menu"
+levels = Array[ExtResource("2_rnv0k")]([ExtResource("3_ui180"), ExtResource("4_ui180")])
+menus = Array[ExtResource("5_hhprh")]([ExtResource("6_ek1rx")])
 
 [node name="LevelContainer" type="Node" parent="." index="0"]
 
-[node name="MainMenu" parent="LevelContainer" index="0" instance=ExtResource("2_rqvn2")]
+[node name="MenuContainer" type="Node" parent="." index="1"]
 
-[node name="Player" parent="." index="1" instance=ExtResource("3_117uc")]
+[node name="Player" parent="." index="2" instance=ExtResource("3_117uc")]
 z_index = 15
 position = Vector2(576, 325)

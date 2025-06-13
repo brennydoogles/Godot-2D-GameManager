@@ -7,5 +7,5 @@ func _on_quit_button_pressed() -> void:
 
 
 func _on_play_button_pressed() -> void:
-	print("Play Button Pressed")
-	GameStateEvents.LEVEL_CHANGE_REQUESTED.emit(GlobalConstants.LEVEL_MAP.get("test"))
+	GameStateEvents.LEVEL_CHANGE_REQUESTED.emit("test_level")
+	GameStateEvents.MENU_CLOSE_REQUESTED.emit()

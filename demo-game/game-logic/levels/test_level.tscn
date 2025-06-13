@@ -313,7 +313,7 @@ shape = SubResource("RectangleShape2D_fhrfl")
 
 [node name="LevelTransitionTrigger" parent="." instance=ExtResource("4_ghwpc")]
 position = Vector2(-40, 192)
-targetSceneUid = "uid://k2cs1h6fx5ho"
+targetScene = "brown_house_interior"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelTransitionTrigger"]
 shape = SubResource("RectangleShape2D_pj1qe")

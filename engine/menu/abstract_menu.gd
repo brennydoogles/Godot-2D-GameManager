@@ -1,3 +1,4 @@
+@icon("uid://cev1cg7epg2ok")
 class_name AbstractMenu
 extends Control
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MenuKey" load_steps=3 format=3 uid="uid://bbw12tu2mmhyk"]
+
+[ext_resource type="Script" uid="uid://ce1rjpku2o4uc" path="res://engine/menu/menu_key.gd" id="1_mg77w"]
+[ext_resource type="PackedScene" uid="uid://bnkaobyaek6jb" path="res://demo-game/game-logic/ui/main_menu.tscn" id="2_krm5w"]
+
+[resource]
+script = ExtResource("1_mg77w")
+menuName = "main_menu"
+targetScene = ExtResource("2_krm5w")
+metadata/_custom_type_script = "uid://ce1rjpku2o4uc"
