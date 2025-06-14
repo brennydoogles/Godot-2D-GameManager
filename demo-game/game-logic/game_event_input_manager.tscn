@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwu6aem7oxdx5"]
+
+[ext_resource type="Script" uid="uid://cp8ffoxlufhr7" path="res://demo-game/game-logic/game_event_input_manager.gd" id="1_75ia8"]
+
+[node name="GameEventInputManager" type="Node2D"]
+script = ExtResource("1_75ia8")

@@ -8,4 +8,4 @@ func _on_quit_button_pressed() -> void:
 
 func _on_play_button_pressed() -> void:
 	GameStateEvents.LEVEL_CHANGE_REQUESTED.emit("test_level")
-	GameStateEvents.MENU_CLOSE_REQUESTED.emit()
+	GameStateEvents.CLOSE_MENU_REQUESTED.emit()

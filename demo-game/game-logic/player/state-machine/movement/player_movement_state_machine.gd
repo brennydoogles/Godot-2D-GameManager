@@ -3,6 +3,7 @@ extends Node
 
 @export
 var starting_state: PlayerMovementState
+@export var pause_state: PlayerMovementState
 #@export
 #var combat_state: PlayerMovementState
 var current_state: PlayerMovementState
@@ -11,8 +12,13 @@ func init(parent: Player) -> void:
 	for child in get_children():
 		child.parent = parent
 	change_state(starting_state)
+	GameStateEvents.MENU_OPEN.connect(_handle_menu_opened)
 	#MessageBus.COMBAT_INITIATED.connect(handle_combat_state)
-	
+
+func _handle_menu_opened() -> void:
+	print("Menu Opened")
+	change_state(pause_state)
+
 #func handle_combat_state() -> void:
 	#change_state(combat_state)
 

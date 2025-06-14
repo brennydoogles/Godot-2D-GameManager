@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://d2evvcohqktdy"]
+[gd_scene load_steps=29 format=3 uid="uid://d2evvcohqktdy"]
 
 [ext_resource type="Script" uid="uid://dyirjaoddn5j4" path="res://demo-game/game-logic/player/player.gd" id="1_x65kf"]
 [ext_resource type="Texture2D" uid="uid://brxmyp2hdgm5e" path="res://demo-game/assets/Prototype_Character_Spritesheet.png" id="2_ev86i"]
 [ext_resource type="Script" uid="uid://cgi0muhceayo2" path="res://demo-game/game-logic/player/state-machine/movement/player_movement_state_machine.gd" id="3_chypj"]
 [ext_resource type="Script" uid="uid://ckv2rycryergm" path="res://demo-game/game-logic/player/state-machine/movement/idle_movement_state.gd" id="4_xneso"]
 [ext_resource type="Script" uid="uid://bmcqmt4pcidd5" path="res://demo-game/game-logic/player/state-machine/movement/moving_movement_state.gd" id="5_25v7p"]
+[ext_resource type="Script" uid="uid://ccobcqcsmpl1o" path="res://demo-game/game-logic/player/state-machine/movement/pause_menu_movement_state.gd" id="6_bpdmb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chypj"]
 atlas = ExtResource("2_ev86i")
@@ -194,9 +195,10 @@ frame_progress = 0.16915
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="PlayerMovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+[node name="PlayerMovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state", "pause_state")]
 script = ExtResource("3_chypj")
 starting_state = NodePath("IdleMovementState")
+pause_state = NodePath("PauseMenuMovementState")
 metadata/_custom_type_script = "uid://cgi0muhceayo2"
 
 [node name="IdleMovementState" type="Node" parent="PlayerMovementStateMachine" node_paths=PackedStringArray("move_state")]
@@ -207,6 +209,11 @@ metadata/_custom_type_script = "uid://ckupstarn6tbt"
 
 [node name="MovingMovementState" type="Node" parent="PlayerMovementStateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("5_25v7p")
+idle_state = NodePath("../IdleMovementState")
+metadata/_custom_type_script = "uid://ckupstarn6tbt"
+
+[node name="PauseMenuMovementState" type="Node" parent="PlayerMovementStateMachine" node_paths=PackedStringArray("idle_state")]
+script = ExtResource("6_bpdmb")
 idle_state = NodePath("../IdleMovementState")
 metadata/_custom_type_script = "uid://ckupstarn6tbt"
 

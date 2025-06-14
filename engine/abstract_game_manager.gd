@@ -24,7 +24,7 @@ func connect_signals() -> void:
 	GameStateEvents.LEVEL_CHANGE_REQUESTED.connect(handle_level_change_requested)
 	GameStateEvents.LEVEL_CHANGE_WITH_START_POSITION_OVERRIDE_REQUESTED.connect(handle_level_change_with_start_position_override_requested)
 	GameStateEvents.SHOW_MENU_REQUESTED.connect(handle_show_menu_request)
-	GameStateEvents.MENU_CLOSE_REQUESTED.connect(handle_close_menu_request)
+	GameStateEvents.CLOSE_MENU_REQUESTED.connect(handle_close_menu_request)
 
 func prep_player() -> void:
 	player.get_parent().remove_child(player)
@@ -48,6 +48,7 @@ func handle_close_menu_request() -> void:
 	var menu_container_children := menu_container.get_children()
 	for child in menu_container_children:
 		child.queue_free()
+	GameStateEvents.MENU_CLOSED.emit()
 
 func is_valid_menu(requestedMenu: String) -> bool:
 	return menu_map.has(requestedMenu)
