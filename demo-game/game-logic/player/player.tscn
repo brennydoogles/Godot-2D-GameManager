@@ -192,9 +192,6 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.16915
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-
 [node name="PlayerMovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state", "pause_state")]
 script = ExtResource("3_chypj")
 starting_state = NodePath("IdleMovementState")
@@ -239,3 +236,6 @@ hit_from_inside = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_25v7p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)

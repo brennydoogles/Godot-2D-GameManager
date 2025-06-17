@@ -24,9 +24,9 @@ main_menu = "main_menu"
 levels = Array[ExtResource("2_rnv0k")]([ExtResource("3_ui180"), ExtResource("4_ui180")])
 menus = Array[ExtResource("5_hhprh")]([ExtResource("6_ek1rx"), SubResource("Resource_upoh3")])
 
-[node name="LevelContainer" type="Node" parent="." index="0"]
+[node name="LevelContainer" type="Node2D" parent="." index="0"]
 
-[node name="MenuContainer" type="Node" parent="." index="1"]
+[node name="MenuContainer" type="CanvasLayer" parent="." index="1"]
 
 [node name="Player" parent="." index="2" instance=ExtResource("3_117uc")]
 z_index = 15
