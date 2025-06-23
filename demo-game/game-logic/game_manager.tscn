@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0lsxr16kke5f"]
+[gd_scene load_steps=14 format=3 uid="uid://d0lsxr16kke5f"]
 
 [ext_resource type="PackedScene" uid="uid://dl8aqq8sxkssu" path="res://engine/abstract_game_manager.tscn" id="1_ljt67"]
 [ext_resource type="Script" uid="uid://dw03336mh8qq7" path="res://engine/level/level_key.gd" id="2_rnv0k"]
@@ -8,7 +8,9 @@
 [ext_resource type="Script" uid="uid://ce1rjpku2o4uc" path="res://engine/menu/menu_key.gd" id="5_hhprh"]
 [ext_resource type="Resource" uid="uid://bbw12tu2mmhyk" path="res://demo-game/game-logic/ui/main_menu.tres" id="6_ek1rx"]
 [ext_resource type="PackedScene" uid="uid://cn4sgft78dnqf" path="res://demo-game/game-logic/ui/pause_menu.tscn" id="7_5xvle"]
+[ext_resource type="Script" uid="uid://de30cnw558hml" path="res://engine/transition/transition_key.gd" id="8_5lud1"]
 [ext_resource type="PackedScene" uid="uid://bwu6aem7oxdx5" path="res://demo-game/game-logic/game_event_input_manager.tscn" id="8_ek1rx"]
+[ext_resource type="PackedScene" uid="uid://co4ih8ymhtc58" path="res://engine/transition/default_fade_to_black_scene_transition.tscn" id="9_rj6a2"]
 
 [sub_resource type="Resource" id="Resource_upoh3"]
 script = ExtResource("5_hhprh")
@@ -16,20 +18,30 @@ menuName = "pause_menu"
 targetScene = ExtResource("7_5xvle")
 metadata/_custom_type_script = "uid://ce1rjpku2o4uc"
 
-[node name="AbstractGameManager" node_paths=PackedStringArray("level_container", "menu_container", "player") instance=ExtResource("1_ljt67")]
+[sub_resource type="Resource" id="Resource_ny1py"]
+script = ExtResource("8_5lud1")
+transitionName = "fade_to_black"
+targetScene = ExtResource("9_rj6a2")
+metadata/_custom_type_script = "uid://de30cnw558hml"
+
+[node name="AbstractGameManager" node_paths=PackedStringArray("level_container", "menu_container", "transition_container", "player") instance=ExtResource("1_ljt67")]
 level_container = NodePath("LevelContainer")
 menu_container = NodePath("MenuContainer")
+transition_container = NodePath("TransitionContainer")
 player = NodePath("Player")
 main_menu = "main_menu"
 levels = Array[ExtResource("2_rnv0k")]([ExtResource("3_ui180"), ExtResource("4_ui180")])
 menus = Array[ExtResource("5_hhprh")]([ExtResource("6_ek1rx"), SubResource("Resource_upoh3")])
+transitions = Array[ExtResource("8_5lud1")]([SubResource("Resource_ny1py")])
 
 [node name="LevelContainer" type="Node2D" parent="." index="0"]
 
 [node name="MenuContainer" type="CanvasLayer" parent="." index="1"]
 
-[node name="Player" parent="." index="2" instance=ExtResource("3_117uc")]
+[node name="TransitionContainer" type="CanvasLayer" parent="." index="2"]
+
+[node name="Player" parent="." index="3" instance=ExtResource("3_117uc")]
 z_index = 15
 position = Vector2(576, 325)
 
-[node name="GameEventInputManager" parent="." index="3" instance=ExtResource("8_ek1rx")]
+[node name="GameEventInputManager" parent="." index="4" instance=ExtResource("8_ek1rx")]
