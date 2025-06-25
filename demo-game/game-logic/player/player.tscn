@@ -179,11 +179,10 @@ animations = [{
 resource_local_to_scene = true
 size = Vector2(16, 16)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
+[node name="Player" type="CharacterBody2D"]
 disable_mode = 2
 motion_mode = 1
 script = ExtResource("1_x65kf")
-animated_sprite = NodePath("AnimatedSprite2D")
 metadata/_custom_type_script = "uid://q2gkp1tjogf"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

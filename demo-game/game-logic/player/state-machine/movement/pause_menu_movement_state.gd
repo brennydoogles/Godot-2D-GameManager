@@ -14,14 +14,14 @@ func enter() -> void:
 	super()
 	
 
-func process_input(event: InputEvent) -> PlayerMovementState:
+func process_input(_event: InputEvent) -> PlayerMovementState:
 	if menu_closed:
 		menu_closed = false
 		return idle_state
 	return null
 
-func process_physics(delta: float) -> PlayerMovementState:
+func process_physics(_delta: float) -> PlayerMovementState:
 	return null
 
-func process_frame(delta: float) -> PlayerMovementState:
+func process_frame(_delta: float) -> PlayerMovementState:
 	return null

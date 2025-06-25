@@ -15,13 +15,13 @@ func enter() -> void:
 	super()
 	
 
-func process_input(event: InputEvent) -> PlayerMovementState:
+func process_input(_event: InputEvent) -> PlayerMovementState:
 	var direction: Vector2 = _get_movement_vector()
 	if direction == Vector2.ZERO:
 		return idle_state
 	return null
 
-func process_frame(delta: float) -> PlayerMovementState:
+func process_frame(_delta: float) -> PlayerMovementState:
 	if Input.is_action_pressed("east"):
 		self.animation_name = "walk_east"
 	elif Input.is_action_pressed("west"):
@@ -33,7 +33,7 @@ func process_frame(delta: float) -> PlayerMovementState:
 	parent.animated_sprite.play(self.animation_name)
 	return null
 
-func process_physics(delta: float) -> PlayerMovementState:
+func process_physics(_delta: float) -> PlayerMovementState:
 	if !sprite_node_position_tween or !sprite_node_position_tween.is_running():
 		if Input.is_action_pressed("east") and !parent.ray_cast_east.is_colliding():
 			_move_player(Vector2(1, 0))

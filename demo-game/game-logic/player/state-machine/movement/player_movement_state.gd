@@ -12,13 +12,13 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
-func process_input(event: InputEvent) -> PlayerMovementState:
+func process_input(_event: InputEvent) -> PlayerMovementState:
 	return null
 
-func process_frame(delta: float) -> PlayerMovementState:
+func process_frame(_delta: float) -> PlayerMovementState:
 	return null
 
-func process_physics(delta: float) -> PlayerMovementState:
+func process_physics(_delta: float) -> PlayerMovementState:
 	return null
 
 func _get_movement_vector() -> Vector2:

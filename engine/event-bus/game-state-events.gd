@@ -1,6 +1,6 @@
 extends Node
 
-
+@warning_ignore_start("unused_signal")
 #region Menu Related Signals
 signal SHOW_MENU_REQUESTED(
 	requestedMenu: String
@@ -35,3 +35,4 @@ signal LEVEL_TRANSITION_COMPLETE
 #region Player Related Signals
 signal PLAYER_TELEPORT_REQUESTED(toLocation: Vector2)
 #endregion
+@warning_ignore_restore("unused_signal")
