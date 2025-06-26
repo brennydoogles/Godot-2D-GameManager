@@ -67,22 +67,78 @@ This node, which extends Area2D, can be placed in a Level anywhere the developer
  * transition_name: String
 	 * This optional var holds the name of the transition to use when moving to the next scene. If no value is provided, the default value is "fade_to_black".
 #### Menu 
+
+##### MenuKey
+This Resource class provides a simple mapping between a Scene and a user friendly String menuName. The purpose of this class is to inform the GameManager of all valid menus and their names. It has the following export vars:
+ * menuName: String
+	 * The String by which this menu will be referenced when loading.
+ * targetScene: PackedScene
+	 * The actual Scene to load. Note: This scene MUST descend from AbstractMenu, or the GameManager will throw an error during loading.
 ##### AbstractMenu
-This is the base class for all Menus, and it extends from Control. Currently this class is not used for anything, but I intend for Menus to be loadable as overlays, and for various improvements in the loading of the initial Main Menu to be implemented this way (for example, the MainMenu of the Demo Game is currently zoomed in too much because of the Player's camera zoom. Once I have a method for loading menus I can disable this camera or potentially remove the player from the scene tree while the menu is on screen).
+This is the base class for all Menus, and it extends from Control. It has no child nodes, and upon entering the scene tree it emits the MENU_OPEN signal from GameStateEvents
 
 #### Transition
+
+##### TransitionKey
+This Resource class provides a simple mapping between a Scene and a user friendly String transitionName. The purpose of this class is to inform the GameManager of all valid transitions and their names. It has the following export vars:
+ * transitionName: String
+	 * The String by which this transition will be referenced when loading.
+ * targetScene: PackedScene
+	 * The actual Scene to load. Note: This scene MUST descend from AbstractSceneTransition, or the GameManager will throw an error during loading.
 #####  AbstractSceneTransition
+This is the base class for all Scene Transitions, and it extends from Control. AbstractSceneTransition has the following export vars:
+ * animation_player: AnimationPlayer
+	 * This variable holds a reference to the AnimationPlayer which is configured with the animations for this transition.
+ * initial_animation_name: String
+	 * This variable holds the animation name to play when leaving the current scene.
+ * middle_animation_name: String
+	 * This variable holds the animation name to play after the initial animation has finished and while waiting for the new Scene to be loaded.
+ * final_animation_name: String
+	 * This variable holds the animation to play when revealing the new scene.
+
+
 #### GameStateEvents
-This script, which extends Node (and will probably be renamed to AbstractGameStateEvents), is an Autoloaded script which defines all of the signals the AbstractGameManager will handle or emit.
+This script, which extends Node, is an Autoloaded script which defines all of the signals the AbstractGameManager will handle or emit. These signals are as follows:
 
-### Game Manager Signals
-The following signals may be emitted or connected to in order to work with the Game Manager.
+  ##### SHOW_MENU_REQUESTED(requestedMenu: String) 
+Description
 
-#### LEVEL_CHANGE_REQUESTED(requestedLevel: String)
-This signal may be emitted at any point to request that the GameManager change the active Level to any other Level. It will first verify that the requested scene exists and is of a type which descends from AbstractLevel, before passing in the player and loading the scene. Where possible it is recommended to use the UID of a scene rather than its path to allow easier refactoring of the project.
+ ##### CLOSE_MENU_REQUESTED 
+Description
 
-#### LEVEL_CHANGE_WITH_START_POSITION_OVERRIDE_REQUESTED(requestedLevel: String, player_start_override: Vector2)
-This signal may be emitted at any point to request that the GameManager change the active Level to any other Level, while providing an override to the Level's default player start location. It will first verify that the requested scene exists and is of a type which descends from AbstractLevel, before passing in the player and loading the scene. Where possible it is recommended to use the UID of a scene rather than its path to allow easier refactoring of the project.
+ ##### MENU_OPEN 
+Description
 
-#### PLAYER_TELEPORT_REQUESTED(toLocation: Vector2)
-This signal will be emitted by the AbstractLevel upon load, in order for the Player scene to know to teleport to the new location. This is not automatically handled by the GameManager classes since the individual game's movement logic may have considerations to take into account during the teleportation process.
+ ##### MENU_CLOSED 
+Description
+
+ ##### LEVEL_CHANGE_REQUESTED(requestedLevel: String, requestedTransition: String) 
+Description
+
+ ##### LEVEL_CHANGE_WITH_START_POSITION_OVERRIDE_REQUESTED(requestedLevel: String, requestedTransition: String, player_start_override: Vector2) 
+Description
+
+ ##### LEVEL_VALIDATED 
+Description
+
+ ##### PLAYER_ADDED_TO_LEVEL 
+Description
+
+ ##### LEVEL_ADDED_TO_TREE 
+Description
+
+ ##### LEVEL_REMOVED_FROM_TREE 
+Description
+
+ ##### LEVEL_OUT_TRANSITION_STARTED 
+Description
+
+ ##### LEVEL_IN_TRANSITION_STARTED 
+Description
+
+ ##### LEVEL_TRANSITION_COMPLETE 
+Description
+
+ ##### PLAYER_TELEPORT_REQUESTED(toLocation: Vector2) 
+Description
+
