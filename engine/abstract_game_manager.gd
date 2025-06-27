@@ -1,7 +1,9 @@
+## This script provides base functionality for the whole library.
 @icon("uid://n6jp7e16vy1h")
 class_name AbstractGameManager
 extends Node2D
 
+## A node container for levels that are loaded into the scene
 @export var level_container: Node
 @export var menu_container: Node
 @export var transition_container: Node

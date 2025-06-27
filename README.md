@@ -16,7 +16,7 @@ This folder contains a demo-game which will (as development progresses) hold a s
 #### Game Manager
 
 ##### AbstractGameManager
-This class is the star of the show. AbstractGameManager provides the base functionality for the whole library. It currently requires two export vars to be set in order function. These are:
+This class is the star of the show. AbstractGameManager provides the base functionality for the whole library. It currently requires two export vars to be set in to order function. These are:
 * Level Container: Node
     * Level Container is the Node that the GameManager will load all new Level scenes into.
 * Menu Container: Node
