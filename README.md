@@ -2,8 +2,6 @@
 This project aims to create a loosely coupled game manager for managing scene and menu transitions for 2D Godot games. It is currently in EARLY DEVELOPMENT, and is not yet ready for use in projects. If you want to help change that feel free to contribute!
 
 
-## NOTE: This README is under active development and is not currently complete. It should be finished within a few days.
-
 ## Project Structure
 The project is currently structured with two primary folders in the repository root. 
 ### Overview
@@ -101,44 +99,44 @@ This is the base class for all Scene Transitions, and it extends from Control. A
 This script, which extends Node, is an Autoloaded script which defines all of the signals the AbstractGameManager will handle or emit. These signals are as follows:
 
   ##### SHOW_MENU_REQUESTED(requestedMenu: String) 
-Description
+This signal informs the GameManager that the game would like to show a menu in the MenuContainer. The single parameter, requestedMenu, should correspond with the menuName of a MenuKey which has been registered with the GameManager
 
  ##### CLOSE_MENU_REQUESTED 
-Description
+This signal informs the GameManager that the game would like to close any currently open Menus.
 
  ##### MENU_OPEN 
-Description
+This signal will be emitted by the GameManager whenever a Menu has been opened.
 
  ##### MENU_CLOSED 
-Description
+This signal will be emitted by the GameManager whenever a Menu has been closed.
 
  ##### LEVEL_CHANGE_REQUESTED(requestedLevel: String, requestedTransition: String) 
-Description
+This signal informs the GameManager that the game would like to load a new level in the LevelContainer with a specified transition. The first parameter, requestedLevel, should correspond with the levelName of a LevelKey which has been registered with the GameManager. The second parameter, requestedTransition, should correspond with the transitionName of a TransitionKey which has been registered with the GameManager.
 
  ##### LEVEL_CHANGE_WITH_START_POSITION_OVERRIDE_REQUESTED(requestedLevel: String, requestedTransition: String, player_start_override: Vector2) 
-Description
+This signal informs the GameManager that the game would like to load a new level in the LevelContainer with a specified transition, and place the player in a position other than the default player start location for that level. The first parameter, requestedLevel, should correspond with the levelName of a LevelKey which has been registered with the GameManager. The second parameter, requestedTransition, should correspond with the transitionName of a TransitionKey which has been registered with the GameManager. The third parameter, player_start_override, is the Vector2 position where the player should be teleported during the level transition.
 
  ##### LEVEL_VALIDATED 
-Description
+This signal will be emitted by the GameManager during the level transition process whenever the requested level has been validated to exist and be of the correct type.
 
  ##### PLAYER_ADDED_TO_LEVEL 
-Description
+This signal will be emitted by the GameManager during the level transition process when the Player has been successfully added to the new level scene.
 
  ##### LEVEL_ADDED_TO_TREE 
-Description
+This signal will be emitted by the GameManager during the level transition process whenever the requested level has been added to the scene tree.
 
  ##### LEVEL_REMOVED_FROM_TREE 
-Description
+This signal will be emitted by the GameManager during the level transition process whenever the previous level has been removed from the scene tree.
 
  ##### LEVEL_OUT_TRANSITION_STARTED 
-Description
+This signal will be emitted by the GameManager whenever the transition from the old level has started.
 
  ##### LEVEL_IN_TRANSITION_STARTED 
-Description
+This signal will be emitted by the GameManager whenever the transition to the new level has started.
 
  ##### LEVEL_TRANSITION_COMPLETE 
-Description
+This signal will be emitted by the GameManager whenever the transition between levels is complete.
 
  ##### PLAYER_TELEPORT_REQUESTED(toLocation: Vector2) 
-Description
+This signal will be emitted by the GameManager in order to request that the player be teleported to a new location. The first parameter, toLocation, represents the location the player should be teleported to. *Note: The game developer must handle this signal in their game logic in order for the GameManager to function correctly*. This will allow the Game developer to handle any custom movement mechanics or state that may have been implemented in their game.
 
