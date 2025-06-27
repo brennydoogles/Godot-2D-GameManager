@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl8aqq8sxkssu"]
+[gd_scene load_steps=4 format=3 uid="uid://dl8aqq8sxkssu"]
 
 [ext_resource type="Script" uid="uid://eq1kks3b70ps" path="res://engine/abstract_game_manager.gd" id="1_xixy6"]
+[ext_resource type="Script" uid="uid://de30cnw558hml" path="res://engine/transition/transition_key.gd" id="2_im5eo"]
+[ext_resource type="Resource" uid="uid://cjr1bgaxfptyy" path="res://engine/transition/default_fade_to_black_scene_transition_key.tres" id="3_uvf3i"]
 
 [node name="AbstractGameManager" type="Node2D"]
 script = ExtResource("1_xixy6")
+transitions = Array[ExtResource("2_im5eo")]([ExtResource("3_uvf3i")])
