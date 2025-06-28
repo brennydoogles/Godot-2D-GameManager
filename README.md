@@ -1,5 +1,5 @@
 # Godot 2D GameManager
-This project aims to create a loosely coupled game manager for managing scene and menu transitions for 2D Godot games. It is currently in EARLY DEVELOPMENT, and is not yet ready for use in projects. If you want to help change that feel free to contribute!
+This project aims to create a loosely coupled game manager for managing scene and menu transitions for 2D Godot games.
 
 
 ## Project Structure
