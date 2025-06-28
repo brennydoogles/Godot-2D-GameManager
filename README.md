@@ -1,4 +1,4 @@
-# Godot 2D GameManager
+# Brenny's GameManager
 This project aims to create a loosely coupled game manager for managing scene and menu transitions for 2D Godot games.
 
 
