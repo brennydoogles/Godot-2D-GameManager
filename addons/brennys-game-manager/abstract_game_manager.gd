@@ -1,4 +1,4 @@
-@icon("uid://n6jp7e16vy1h")
+@icon("res://addons/brennys-game-manager/icons/AbstractGameManager.svg")
 class_name AbstractGameManager
 extends Node2D
 

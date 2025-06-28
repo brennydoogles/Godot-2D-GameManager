@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dsxl3ftiggnyo"]
 
-[ext_resource type="Script" uid="uid://q2gkp1tjogf" path="res://engine/player/abstract-player.gd" id="1_u1gty"]
+[ext_resource type="Script" uid="uid://q2gkp1tjogf" path="res://addons/brennys-game-manager/player/abstract-player.gd" id="1_u1gty"]
 
 [node name="AbstractPlayer" type="CharacterBody2D"]
 script = ExtResource("1_u1gty")

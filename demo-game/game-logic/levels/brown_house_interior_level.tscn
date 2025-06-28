@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=4 uid="uid://k2cs1h6fx5ho"]
 
-[ext_resource type="Script" uid="uid://cgolcxvfyanwj" path="res://engine/level/abstract_level.gd" id="1_b2c1s"]
+[ext_resource type="Script" uid="uid://cgolcxvfyanwj" path="res://addons/brennys-game-manager/level/abstract_level.gd" id="1_b2c1s"]
 [ext_resource type="TileSet" uid="uid://dtdkgb5eji134" path="res://demo-game/assets/tileset_brown.tres" id="2_bnj36"]
-[ext_resource type="PackedScene" uid="uid://bei0r46t38cbd" path="res://engine/level/level_transition_trigger.tscn" id="3_76u1l"]
+[ext_resource type="PackedScene" uid="uid://bei0r46t38cbd" path="res://addons/brennys-game-manager/level/level_transition_trigger.tscn" id="3_76u1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnj36"]
 size = Vector2(8, 8)

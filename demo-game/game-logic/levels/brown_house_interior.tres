@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LevelKey" load_steps=3 format=3 uid="uid://ce2nyotbnxdgd"]
 
-[ext_resource type="Script" uid="uid://dw03336mh8qq7" path="res://engine/level/level_key.gd" id="1_0kllu"]
+[ext_resource type="Script" uid="uid://dw03336mh8qq7" path="res://addons/brennys-game-manager/level/level_key.gd" id="1_0kllu"]
 [ext_resource type="PackedScene" uid="uid://k2cs1h6fx5ho" path="res://demo-game/game-logic/levels/brown_house_interior_level.tscn" id="2_nukr4"]
 
 [resource]

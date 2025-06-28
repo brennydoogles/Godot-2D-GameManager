@@ -1,4 +1,4 @@
-@icon("uid://bg1slm8h47wey")
+@icon("res://addons/brennys-game-manager/icons/AbstractLevel.svg")
 class_name AbstractLevel
 extends Node2D
 

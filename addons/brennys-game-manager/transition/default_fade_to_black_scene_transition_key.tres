@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TransitionKey" load_steps=3 format=3 uid="uid://cjr1bgaxfptyy"]
+
+[ext_resource type="Script" uid="uid://de30cnw558hml" path="res://addons/brennys-game-manager/transition/transition_key.gd" id="1_qp7xu"]
+[ext_resource type="PackedScene" uid="uid://co4ih8ymhtc58" path="res://addons/brennys-game-manager/transition/default_fade_to_black_scene_transition.tscn" id="2_ett85"]
+
+[resource]
+script = ExtResource("1_qp7xu")
+transitionName = "fade_to_black"
+targetScene = ExtResource("2_ett85")
+metadata/_custom_type_script = "uid://de30cnw558hml"

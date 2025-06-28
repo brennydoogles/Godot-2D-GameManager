@@ -3,6 +3,6 @@
 
 
 # Only include the engine folder when downloading from the Asset Library.
-/**         export-ignore
-/engine     !export-ignore
-/engine/**  !export-ignore
+/**                              export-ignore
+/addons/brennys-game-manager     !export-ignore
+/addons/brennys-game-manager/**  !export-ignore
