@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=4 uid="uid://bh0edvjgscg7i"]
 
-[ext_resource type="Script" uid="uid://cgolcxvfyanwj" path="res://engine/level/abstract_level.gd" id="1_efotn"]
+[ext_resource type="Script" uid="uid://cgolcxvfyanwj" path="res://addons/brennys-game-manager/level/abstract_level.gd" id="1_efotn"]
 [ext_resource type="TileSet" uid="uid://d3wmxflfjbr0s" path="res://demo-game/assets/overworld_tileset.tres" id="2_fhrfl"]
 [ext_resource type="Texture2D" uid="uid://drb8rw2pdjjdt" path="res://demo-game/assets/overworld_tileset.png" id="2_qmmj3"]
-[ext_resource type="PackedScene" uid="uid://bei0r46t38cbd" path="res://engine/level/level_transition_trigger.tscn" id="4_ghwpc"]
+[ext_resource type="PackedScene" uid="uid://bei0r46t38cbd" path="res://addons/brennys-game-manager/level/level_transition_trigger.tscn" id="4_ghwpc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghwpc"]
 texture = ExtResource("2_qmmj3")

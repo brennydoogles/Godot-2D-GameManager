@@ -22,7 +22,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameStateEvents="*res://engine/event-bus/game-state-events.gd"
+GameStateEvents="*res://addons/brennys-game-manager/event-bus/game-state-events.gd"
 PlayerStateEvents="*res://demo-game/game-logic/event-bus/player-state-events.gd"
 GlobalConstants="*res://demo-game/game-logic/autoload/global_constants.gd"
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://co4ih8ymhtc58"]
 
-[ext_resource type="Script" uid="uid://d3hvcs7a82exn" path="res://engine/transition/abstract_scene_transition.gd" id="1_euie0"]
+[ext_resource type="Script" uid="uid://d3hvcs7a82exn" path="res://addons/brennys-game-manager/transition/abstract_scene_transition.gd" id="1_euie0"]
 
 [sub_resource type="Animation" id="Animation_euie0"]
 length = 0.001

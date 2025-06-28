@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cev1cg7epg2ok"
-path="res://.godot/imported/AbstractMenu.svg-b65410845bdf9c3db2628a50c9906bfa.ctex"
+uid="uid://n6jp7e16vy1h"
+path="res://.godot/imported/AbstractGameManager.svg-fdcc4681ebb2a16787aaaf35c5cfc130.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://engine/icons/AbstractMenu.svg"
-dest_files=["res://.godot/imported/AbstractMenu.svg-b65410845bdf9c3db2628a50c9906bfa.ctex"]
+source_file="res://addons/brennys-game-manager/icons/AbstractGameManager.svg"
+dest_files=["res://.godot/imported/AbstractGameManager.svg-fdcc4681ebb2a16787aaaf35c5cfc130.ctex"]
 
 [params]
 

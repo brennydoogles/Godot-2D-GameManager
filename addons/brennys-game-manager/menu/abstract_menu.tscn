@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0mw8t7172ip7"]
 
-[ext_resource type="Script" uid="uid://bxnyjne0oltx4" path="res://engine/menu/abstract_menu.gd" id="1_laelk"]
+[ext_resource type="Script" uid="uid://bxnyjne0oltx4" path="res://addons/brennys-game-manager/menu/abstract_menu.gd" id="1_laelk"]
 
 [node name="AbstractMenu" type="Control"]
 layout_mode = 3

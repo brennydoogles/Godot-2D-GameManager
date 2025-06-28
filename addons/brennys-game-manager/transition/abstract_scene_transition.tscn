@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://calorsdmag0et"]
 
-[ext_resource type="Script" uid="uid://d3hvcs7a82exn" path="res://engine/transition/abstract_scene_transition.gd" id="1_7g88b"]
+[ext_resource type="Script" uid="uid://d3hvcs7a82exn" path="res://addons/brennys-game-manager/transition/abstract_scene_transition.gd" id="1_7g88b"]
 
 [node name="AbstractSceneTransition" type="Control"]
 layout_mode = 3

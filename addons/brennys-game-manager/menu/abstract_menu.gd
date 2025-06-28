@@ -1,4 +1,4 @@
-@icon("uid://cev1cg7epg2ok")
+@icon("res://addons/brennys-game-manager/icons/AbstractMenu.svg")
 class_name AbstractMenu
 extends Control
 

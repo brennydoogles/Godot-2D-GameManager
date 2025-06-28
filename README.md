@@ -7,7 +7,8 @@ This project aims to create a loosely coupled game manager for managing scene an
 The project is currently structured with two primary folders in the repository root. 
 ### Folder Overview
 
-#### Engine
+
+#### /addons/brennys-game-manager
 This folder holds the main implementation of the `GameManager` engine. The classes and scenes in this folder should be safe to drop into any project and use without fear of any missing dependencies.
 #### Demo Game
 This folder contains a demo-game which will (as development progresses) hold a small game which implements all of the features supported by the game manager engine. This is accomplished by extending the base classes of the `GameManager` engine and emitting the proper signals in order to evoke `GameManager` functionality.
