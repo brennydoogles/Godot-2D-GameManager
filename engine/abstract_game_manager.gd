@@ -71,7 +71,6 @@ func _handle_menu_transition(newMenu: AbstractMenu) -> void:
 		child.queue_free()
 
 func handle_level_change_requested(requestedLevel: String, requestedTransition: String) -> void:
-	
 	change_level(requestedLevel, requestedTransition, Vector2.INF)
 
 func handle_level_change_with_start_position_override_requested(requestedLevel: String, requestedTransition: String, player_start_override: Vector2) -> void:
