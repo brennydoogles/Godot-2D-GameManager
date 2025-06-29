@@ -2,7 +2,7 @@
 * text=auto eol=lf
 
 
-# Only include the engine folder when downloading from the Asset Library.
-/**                              export-ignore
-/addons/brennys-game-manager     !export-ignore
-/addons/brennys-game-manager/**  !export-ignore
+# Only include the addons folder when downloading from the Asset Library.
+/**        export-ignore
+/addons    !export-ignore
+/addons/** !export-ignore
