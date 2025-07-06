@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmvewri5r3k7g"]
+
+[ext_resource type="Script" uid="uid://wftlfkni847l" path="res://addons/brennys-game-manager/menu/hud/abstract_hud.gd" id="1_lglck"]
+
+[node name="AbstractHud" type="CanvasLayer" node_paths=PackedStringArray("hud_icon_containers") groups=["hud"]]
+script = ExtResource("1_lglck")
+hud_icon_containers = [null, null]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://d2evvcohqktdy"]
+[gd_scene load_steps=31 format=3 uid="uid://d2evvcohqktdy"]
 
 [ext_resource type="Script" uid="uid://dyirjaoddn5j4" path="res://demo-game/game-logic/player/player.gd" id="1_x65kf"]
 [ext_resource type="Texture2D" uid="uid://brxmyp2hdgm5e" path="res://demo-game/assets/Prototype_Character_Spritesheet.png" id="2_ev86i"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ckv2rycryergm" path="res://demo-game/game-logic/player/state-machine/movement/idle_movement_state.gd" id="4_xneso"]
 [ext_resource type="Script" uid="uid://bmcqmt4pcidd5" path="res://demo-game/game-logic/player/state-machine/movement/moving_movement_state.gd" id="5_25v7p"]
 [ext_resource type="Script" uid="uid://ccobcqcsmpl1o" path="res://demo-game/game-logic/player/state-machine/movement/pause_menu_movement_state.gd" id="6_bpdmb"]
+[ext_resource type="Script" uid="uid://d3r35jhktkgdy" path="res://demo-game/game-logic/player/abstract_stat.gd" id="7_gtcbp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chypj"]
 atlas = ExtResource("2_ev86i")
@@ -179,10 +180,14 @@ animations = [{
 resource_local_to_scene = true
 size = Vector2(16, 16)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxs4v"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("stat_nodes") groups=["player_node"]]
 disable_mode = 2
 motion_mode = 1
 script = ExtResource("1_x65kf")
+stat_nodes = [NodePath("Health"), NodePath("Coins")]
 metadata/_custom_type_script = "uid://q2gkp1tjogf"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -238,3 +243,24 @@ shape = SubResource("RectangleShape2D_25v7p")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
+
+[node name="Coins" type="Node" parent="."]
+script = ExtResource("7_gtcbp")
+max_stat_value = 5
+stat_name = &"coin"
+metadata/_custom_type_script = "uid://d3r35jhktkgdy"
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("7_gtcbp")
+stat_value = 3
+max_stat_value = 5
+stat_name = &"heart"
+
+[node name="PickupDetection" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupDetection"]
+shape = SubResource("CircleShape2D_xxs4v")
+
+[connection signal="area_entered" from="PickupDetection" to="." method="_on_pickup_detection_area_entered"]

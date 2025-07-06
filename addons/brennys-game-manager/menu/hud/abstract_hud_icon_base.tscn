@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://nnmvubpt7m2d"]
+
+[ext_resource type="Script" uid="uid://cspbyqkrmgxy7" path="res://addons/brennys-game-manager/menu/hud/abstract_hud_icon_base.gd" id="1_axxyo"]
+[ext_resource type="Texture2D" uid="uid://jdby1xag8pw2" path="res://demo-game/assets/missing-texture.png" id="1_yb4qy"]
+
+[node name="AbstractHudIcon" type="TextureRect"]
+custom_minimum_size = Vector2(45, 45)
+texture = ExtResource("1_yb4qy")
+script = ExtResource("1_axxyo")
+icon_type = &"heart"

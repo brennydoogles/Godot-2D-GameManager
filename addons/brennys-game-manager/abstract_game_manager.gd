@@ -5,6 +5,7 @@ extends Node2D
 
 ## A node container for levels that are loaded into the scene
 @export var level_container: Node
+@export var hud : AbstractHud
 @export var menu_container: Node
 @export var transition_container: Node
 @export var player: AbstractPlayer
@@ -78,7 +79,7 @@ func handle_level_change_with_start_position_override_requested(requestedLevel: 
 
 func is_valid_level(levelName: String) -> bool:
 	return level_map.has(levelName)
-
+	
 func change_level(requestedLevel: String, requestedTransition: String, player_start_override: Vector2) -> void:
 	if transition_container and requestedTransition and transition_map.has(requestedTransition):
 		var transition: AbsctractSceneTransition = transition_map.get(requestedTransition).instantiate()

@@ -30,6 +30,10 @@ GameStateEvents="*res://addons/brennys-game-manager/event-bus/game-state-events.
 
 enabled=PackedStringArray("res://addons/brennys-game-manager/plugin.cfg")
 
+[global_group]
+
+player_node="used to target the player node from anywhere in the project"
+
 [input]
 
 north={
@@ -64,7 +68,8 @@ pause={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
+2d_physics/layer_1="AreaCollision"
+2d_physics/layer_2="PickupDetection"
 
 [rendering]
 

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2c4enugj0ke8"]
+
+[ext_resource type="Script" uid="uid://idksimosake4" path="res://addons/brennys-game-manager/menu/hud/abstract_hud_icon_container.gd" id="1_gon75"]
+
+[node name="AbstractHudIconContainer" type="AspectRatioContainer"]
+size_flags_horizontal = 8
+size_flags_vertical = 0
+script = ExtResource("1_gon75")

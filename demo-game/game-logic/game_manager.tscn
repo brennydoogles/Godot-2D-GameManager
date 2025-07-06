@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0lsxr16kke5f"]
+[gd_scene load_steps=12 format=3 uid="uid://d0lsxr16kke5f"]
 
 [ext_resource type="PackedScene" uid="uid://dl8aqq8sxkssu" path="res://addons/brennys-game-manager/abstract_game_manager.tscn" id="1_ljt67"]
 [ext_resource type="Script" uid="uid://dw03336mh8qq7" path="res://addons/brennys-game-manager/level/level_key.gd" id="2_rnv0k"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://bbw12tu2mmhyk" path="res://demo-game/game-logic/ui/main_menu.tres" id="6_ek1rx"]
 [ext_resource type="PackedScene" uid="uid://cn4sgft78dnqf" path="res://demo-game/game-logic/ui/pause_menu.tscn" id="7_5xvle"]
 [ext_resource type="PackedScene" uid="uid://bwu6aem7oxdx5" path="res://demo-game/game-logic/game_event_input_manager.tscn" id="8_ek1rx"]
+[ext_resource type="PackedScene" uid="uid://b7geo8xmmj66a" path="res://demo-game/game-logic/ui/hud.tscn" id="8_upoh3"]
 
 [sub_resource type="Resource" id="Resource_upoh3"]
 script = ExtResource("5_hhprh")
@@ -25,14 +26,17 @@ main_menu = "main_menu"
 levels = Array[ExtResource("2_rnv0k")]([ExtResource("3_ui180"), ExtResource("4_ui180")])
 menus = Array[ExtResource("5_hhprh")]([ExtResource("6_ek1rx"), SubResource("Resource_upoh3")])
 
-[node name="LevelContainer" type="Node2D" parent="." index="0"]
+[node name="AbstractHud" parent="." index="0" node_paths=PackedStringArray("player") instance=ExtResource("8_upoh3")]
+player = NodePath("../Player")
 
-[node name="MenuContainer" type="CanvasLayer" parent="." index="1"]
+[node name="LevelContainer" type="Node2D" parent="." index="1"]
 
-[node name="TransitionContainer" type="CanvasLayer" parent="." index="2"]
+[node name="MenuContainer" type="CanvasLayer" parent="." index="2"]
 
-[node name="Player" parent="." index="3" instance=ExtResource("3_117uc")]
+[node name="TransitionContainer" type="CanvasLayer" parent="." index="3"]
+
+[node name="Player" parent="." index="4" instance=ExtResource("3_117uc")]
 z_index = 15
 position = Vector2(576, 325)
 
-[node name="GameEventInputManager" parent="." index="4" instance=ExtResource("8_ek1rx")]
+[node name="GameEventInputManager" parent="." index="5" instance=ExtResource("8_ek1rx")]
