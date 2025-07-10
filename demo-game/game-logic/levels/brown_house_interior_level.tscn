@@ -3,16 +3,15 @@
 [ext_resource type="Script" uid="uid://cgolcxvfyanwj" path="res://addons/brennys-game-manager/level/abstract_level.gd" id="1_b2c1s"]
 [ext_resource type="TileSet" uid="uid://dtdkgb5eji134" path="res://demo-game/assets/tileset_brown.tres" id="2_bnj36"]
 [ext_resource type="PackedScene" uid="uid://bei0r46t38cbd" path="res://addons/brennys-game-manager/level/level_transition_trigger.tscn" id="3_76u1l"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnj36"]
-size = Vector2(8, 8)
+[ext_resource type="Script" uid="uid://se6yd50htggc" path="res://addons/brennys-game-manager/level/player_teleport_destination.gd" id="3_s6y3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76u1l"]
 size = Vector2(16, 16)
 
-[node name="BrownHouseInteriorLevel" type="Node2D" node_paths=PackedStringArray("player_start_location")]
+[node name="BrownHouseInteriorLevel" type="Node2D" node_paths=PackedStringArray("player_start_location", "teleport_destinations")]
 script = ExtResource("1_b2c1s")
 player_start_location = NodePath("PlayerStartLocation")
+teleport_destinations = [NodePath("PlayerStartLocation")]
 metadata/_custom_type_script = "uid://cgolcxvfyanwj"
 
 [node name="Ground" type="TileMapLayer" parent="."]
@@ -23,15 +22,15 @@ tile_set = ExtResource("2_bnj36")
 tile_map_data = PackedByteArray("AAAMAPj/AAAHAAMAAAAKAPj/AAAOAAAAAAAJAPj/AAAOAAAAAAAIAPj/AAAPAAAAAAA=")
 tile_set = ExtResource("2_bnj36")
 
-[node name="PlayerStartLocation" type="StaticBody2D" parent="."]
+[node name="PlayerStartLocation" type="Marker2D" parent="."]
 position = Vector2(136, -72)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerStartLocation"]
-shape = SubResource("RectangleShape2D_bnj36")
+script = ExtResource("3_s6y3s")
+destinationName = "default"
+metadata/_custom_type_script = "uid://se6yd50htggc"
 
 [node name="LevelTransitionTrigger" parent="." instance=ExtResource("3_76u1l")]
 targetScene = "test_level"
-player_start_override = Vector2(-40, 224)
+teleport_destination = "brown_house_exit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelTransitionTrigger"]
 position = Vector2(200, -120)
