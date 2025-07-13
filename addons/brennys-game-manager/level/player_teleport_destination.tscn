@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drstfhi4ffhgy"]
+
+[ext_resource type="Script" uid="uid://se6yd50htggc" path="res://addons/brennys-game-manager/level/player_teleport_destination.gd" id="1_w37ap"]
+
+[node name="PlayerTeleportDestination" type="Marker2D"]
+script = ExtResource("1_w37ap")
