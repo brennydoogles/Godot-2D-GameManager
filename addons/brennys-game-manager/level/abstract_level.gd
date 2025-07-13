@@ -5,7 +5,6 @@ extends Node2D
 @export var player: AbstractPlayer
 @export var player_start_location: PlayerTeleportDestination
 @export var player_start_override: String
-@export var teleport_destinations: Array[PlayerTeleportDestination]
 
 var destination_map: Dictionary[String, Vector2]
 
@@ -34,5 +33,6 @@ func _on_tree_exiting() -> void:
 
 
 func map_teleport_destinations() -> void:
-	for destination in teleport_destinations:
-		destination_map.set(destination.destinationName, destination.global_position)
+	for child in self.get_children():
+		if child is PlayerTeleportDestination:
+			destination_map.set(child.destinationName, child.global_position)

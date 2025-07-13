@@ -284,10 +284,9 @@ sources/0 = SubResource("TileSetAtlasSource_ghwpc")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj1qe"]
 size = Vector2(16, 16)
 
-[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("player_start_location", "teleport_destinations")]
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("player_start_location")]
 script = ExtResource("1_efotn")
 player_start_location = NodePath("PlayerStart")
-teleport_destinations = [NodePath("PlayerStart"), NodePath("BrownHouseExitPoint")]
 metadata/_custom_type_script = "uid://cgolcxvfyanwj"
 
 [node name="Ocean" type="TileMapLayer" parent="."]

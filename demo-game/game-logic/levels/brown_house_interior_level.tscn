@@ -8,10 +8,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76u1l"]
 size = Vector2(16, 16)
 
-[node name="BrownHouseInteriorLevel" type="Node2D" node_paths=PackedStringArray("player_start_location", "teleport_destinations")]
+[node name="BrownHouseInteriorLevel" type="Node2D" node_paths=PackedStringArray("player_start_location")]
 script = ExtResource("1_b2c1s")
 player_start_location = NodePath("PlayerStartLocation")
-teleport_destinations = [NodePath("PlayerStartLocation")]
 metadata/_custom_type_script = "uid://cgolcxvfyanwj"
 
 [node name="Ground" type="TileMapLayer" parent="."]
