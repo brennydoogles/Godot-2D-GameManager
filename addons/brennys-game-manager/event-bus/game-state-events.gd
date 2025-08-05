@@ -13,12 +13,8 @@ signal MENU_CLOSED
 #region Level Related Signals
 signal LEVEL_CHANGE_REQUESTED(
 	requestedLevel: String,
-	requestedTransition: String
-)
-signal LEVEL_CHANGE_WITH_START_POSITION_OVERRIDE_REQUESTED(
-	requestedLevel: String, 
 	requestedTransition: String,
-	player_start_override: Vector2
+	teleportDestination: String
 )
 signal LEVEL_VALIDATED
 signal PLAYER_ADDED_TO_LEVEL
