@@ -39,5 +39,3 @@ z_index = 15
 position = Vector2(576, 325)
 
 [node name="GameEventInputManager" parent="." index="5" instance=ExtResource("8_ek1rx")]
-
-[connection signal="item_picked_up" from="Player" to="HeartsHud" method="respond_to_heart_pickup"]

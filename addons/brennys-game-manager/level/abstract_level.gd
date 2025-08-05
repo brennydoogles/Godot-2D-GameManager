@@ -4,7 +4,7 @@ extends Node2D
 
 @export var player: AbstractPlayer
 @export var player_start_location: PlayerTeleportDestination
-@export var player_start_override: String
+@export var player_start_override: Vector2
 
 var destination_map: Dictionary[String, Vector2]
 

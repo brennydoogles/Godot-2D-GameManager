@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://k2cs1h6fx5ho"]
+[gd_scene load_steps=7 format=4 uid="uid://k2cs1h6fx5ho"]
 
 [ext_resource type="Script" uid="uid://cgolcxvfyanwj" path="res://addons/brennys-game-manager/level/abstract_level.gd" id="1_b2c1s"]
 [ext_resource type="TileSet" uid="uid://dtdkgb5eji134" path="res://demo-game/assets/tileset_brown.tres" id="2_bnj36"]
 [ext_resource type="PackedScene" uid="uid://bei0r46t38cbd" path="res://addons/brennys-game-manager/level/level_transition_trigger.tscn" id="3_76u1l"]
 [ext_resource type="Script" uid="uid://se6yd50htggc" path="res://addons/brennys-game-manager/level/player_teleport_destination.gd" id="3_s6y3s"]
+[ext_resource type="PackedScene" uid="uid://b4q6ckv41txcu" path="res://demo-game/game-logic/items/heart_pickup_area.tscn" id="5_m0k8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76u1l"]
 size = Vector2(16, 16)
@@ -29,8 +30,16 @@ metadata/_custom_type_script = "uid://se6yd50htggc"
 
 [node name="LevelTransitionTrigger" parent="." instance=ExtResource("3_76u1l")]
 targetScene = "test_level"
-teleport_destination = "brown_house_exit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelTransitionTrigger"]
 position = Vector2(200, -120)
 shape = SubResource("RectangleShape2D_76u1l")
+
+[node name="Heart3" parent="." instance=ExtResource("5_m0k8c")]
+position = Vector2(56, -72)
+
+[node name="Heart2" parent="." instance=ExtResource("5_m0k8c")]
+position = Vector2(200, -40)
+
+[node name="Heart" parent="." instance=ExtResource("5_m0k8c")]
+position = Vector2(89, 40)

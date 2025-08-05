@@ -14,7 +14,7 @@ signal MENU_CLOSED
 signal LEVEL_CHANGE_REQUESTED(
 	requestedLevel: String,
 	requestedTransition: String,
-	teleportDestination: String
+	teleportDestination: Vector2
 )
 signal LEVEL_VALIDATED
 signal PLAYER_ADDED_TO_LEVEL

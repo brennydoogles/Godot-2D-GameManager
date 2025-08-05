@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4q6ckv41txcu"]
+
+[ext_resource type="Script" uid="uid://dogji82a57tfc" path="res://demo-game/game-logic/items/heart_pickup_area.gd" id="1_ue8l3"]
+[ext_resource type="Texture2D" uid="uid://dynu52hvw7u6i" path="res://demo-game/assets/filled_heart.png" id="2_k7i37"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hbb6y"]
+radius = 5.09902
+
+[node name="PickupArea" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ue8l3")
+
+[node name="Heart" type="Sprite2D" parent="."]
+texture = ExtResource("2_k7i37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hbb6y")
+debug_color = Color(0.900795, 0.000163837, 0.761522, 0.42)
+
+[connection signal="area_entered" from="." to="." method="_on_pickup_area_area_entered"]

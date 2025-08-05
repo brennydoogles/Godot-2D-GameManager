@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7geo8xmmj66a"]
+
+[ext_resource type="Script" uid="uid://bje0ll120m6yd" path="res://demo-game/game-logic/ui/hud_hearts_handler.gd" id="1_8eyhm"]
+[ext_resource type="PackedScene" uid="uid://eipe1nu87jsk" path="res://demo-game/game-logic/ui/heart_icon.tscn" id="3_qxdw7"]
+[ext_resource type="Script" uid="uid://digykp361qu00" path="res://demo-game/game-logic/ui/heart_container.gd" id="3_ws8w1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8eyhm"]
+
+[node name="HeartsHud" type="CanvasLayer"]
+script = ExtResource("1_8eyhm")
+hud_value_name = &"hearts"
+hud_value = 5
+metadata/_custom_type_script = "uid://wftlfkni847l"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8eyhm")
+
+[node name="HeartContainer" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer"]
+layout_mode = 2
+script = ExtResource("3_ws8w1")
+
+[node name="TextureRect" parent="Control/MarginContainer/PanelContainer/HeartContainer" instance=ExtResource("3_qxdw7")]
+layout_mode = 2
+value = 0.0
+
+[node name="TextureRect2" parent="Control/MarginContainer/PanelContainer/HeartContainer" instance=ExtResource("3_qxdw7")]
+layout_mode = 2
+value = 0.0
+
+[node name="TextureRect3" parent="Control/MarginContainer/PanelContainer/HeartContainer" instance=ExtResource("3_qxdw7")]
+layout_mode = 2
+value = 0.0
+
+[connection signal="hud_value_updated" from="." to="Control/MarginContainer/PanelContainer/HeartContainer" method="set_hearts_to_new_value"]

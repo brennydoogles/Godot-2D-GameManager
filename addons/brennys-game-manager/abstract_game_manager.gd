@@ -70,7 +70,7 @@ func _handle_menu_transition(newMenu: AbstractMenu) -> void:
 	for child in menu_container_children:
 		child.queue_free()
 
-func handle_level_change_requested(requestedLevel: String, requestedTransition: String, teleportDestination: String) -> void:
+func handle_level_change_requested(requestedLevel: String, requestedTransition: String, teleportDestination: Vector2) -> void:
 	change_level(requestedLevel, requestedTransition, teleportDestination)
 
 func is_valid_level(levelName: String) -> bool:
@@ -87,7 +87,7 @@ func change_level(requestedLevel: String, requestedTransition: String, player_st
 	var level: AbstractLevel = level_map.get(requestedLevel).instantiate()
 	assert(level is AbstractLevel, "The Loaded Level must be of type AbstractLevel to work with GameManager")
 	GameStateEvents.LEVEL_VALIDATED.emit()
-	if player_start_override and player_start_override != "default":
+	if player_start_override:
 		level.player_start_override = player_start_override
 	level.player = player
 	GameStateEvents.PLAYER_ADDED_TO_LEVEL.emit()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by601oro4fawa"
-path="res://.godot/imported/AbstractHudIconContainer.svg-1768747fa55d943e76b8d7463c1d5d42.ctex"
+uid="uid://7qf7k5o81j3g"
+path="res://.godot/imported/AbstractHudDataProvider.svg-142f78d3fde80ac38e1c51de2b83b78a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/brennys-game-manager/icons/abstract_hud/AbstractHudIconContainer.svg"
-dest_files=["res://.godot/imported/AbstractHudIconContainer.svg-1768747fa55d943e76b8d7463c1d5d42.ctex"]
+source_file="res://addons/brennys-game-manager/icons/abstract_hud/AbstractHudDataProvider.svg"
+dest_files=["res://.godot/imported/AbstractHudDataProvider.svg-142f78d3fde80ac38e1c51de2b83b78a.ctex"]
 
 [params]
 

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://eipe1nu87jsk"]
+
+[ext_resource type="Texture2D" uid="uid://ho27ctb1mu6n" path="res://demo-game/assets/empty_heart.png" id="1_85lca"]
+[ext_resource type="Texture2D" uid="uid://dynu52hvw7u6i" path="res://demo-game/assets/filled_heart.png" id="2_wenlb"]
+
+[node name="Heart Icon" type="TextureProgressBar"]
+custom_minimum_size = Vector2(75, 75)
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 4.0
+value = 4.0
+fill_mode = 5
+nine_patch_stretch = true
+texture_under = ExtResource("1_85lca")
+texture_progress = ExtResource("2_wenlb")

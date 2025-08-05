@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://bh0edvjgscg7i"]
+[gd_scene load_steps=10 format=4 uid="uid://bh0edvjgscg7i"]
 
 [ext_resource type="Script" uid="uid://cgolcxvfyanwj" path="res://addons/brennys-game-manager/level/abstract_level.gd" id="1_efotn"]
 [ext_resource type="TileSet" uid="uid://d3wmxflfjbr0s" path="res://demo-game/assets/overworld_tileset.tres" id="2_fhrfl"]
 [ext_resource type="Texture2D" uid="uid://drb8rw2pdjjdt" path="res://demo-game/assets/overworld_tileset.png" id="2_qmmj3"]
 [ext_resource type="PackedScene" uid="uid://bei0r46t38cbd" path="res://addons/brennys-game-manager/level/level_transition_trigger.tscn" id="4_ghwpc"]
-[ext_resource type="PackedScene" uid="uid://cxerguyjmjmkp" path="res://demo-game/game-logic/items/heart.tscn" id="5_7p3yh"]
-[ext_resource type="PackedScene" uid="uid://tl5yhcsxht56" path="res://demo-game/game-logic/items/coin.tscn" id="5_pj1qe"]
 [ext_resource type="Script" uid="uid://se6yd50htggc" path="res://addons/brennys-game-manager/level/player_teleport_destination.gd" id="4_pj1qe"]
+[ext_resource type="PackedScene" uid="uid://b4q6ckv41txcu" path="res://demo-game/game-logic/items/heart_pickup_area.tscn" id="6_7p3yh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghwpc"]
 texture = ExtResource("2_qmmj3")
@@ -317,25 +316,14 @@ targetScene = "brown_house_interior"
 position = Vector2(-112, 0)
 shape = SubResource("RectangleShape2D_pj1qe")
 
-[node name="HeartPickup3" parent="." instance=ExtResource("5_7p3yh")]
-position = Vector2(130, 22)
-
-[node name="HeartPickup" parent="." instance=ExtResource("5_7p3yh")]
-position = Vector2(96, 105)
-
-[node name="HeartPickup2" parent="." instance=ExtResource("5_7p3yh")]
-position = Vector2(5, 120)
-
-[node name="CoinPickup3" parent="." instance=ExtResource("5_pj1qe")]
-position = Vector2(96, 58)
-
-[node name="CoinPickup" parent="." instance=ExtResource("5_pj1qe")]
-position = Vector2(-6, 81)
-
-[node name="CoinPickup2" parent="." instance=ExtResource("5_pj1qe")]
-position = Vector2(38, -8)
 [node name="BrownHouseExitPoint" type="Marker2D" parent="."]
 position = Vector2(40, 96)
 script = ExtResource("4_pj1qe")
 destinationName = "brown_house_exit"
 metadata/_custom_type_script = "uid://se6yd50htggc"
+
+[node name="Heart" parent="." instance=ExtResource("6_7p3yh")]
+position = Vector2(-39, 131)
+
+[node name="Heart2" parent="." instance=ExtResource("6_7p3yh")]
+position = Vector2(104, 90)
