@@ -1,6 +1,12 @@
 extends Node
 
 @warning_ignore_start("unused_signal")
+#region HUD Related Signals
+signal SHOW_HUD_REQUESTED(requestedHud: String)
+signal HIDE_HUD_REQUESTED(requestedHud: String)
+signal HUD_VALUE_UPDATED(valueName: String, newValue)
+#endregion
+
 #region Menu Related Signals
 signal SHOW_MENU_REQUESTED(
 	requestedMenu: String

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddgpidsqmixst"]
+
+[ext_resource type="Script" uid="uid://dmtuyk5p8qatt" path="res://addons/brennys-game-manager/hud/abstract_hud_data_provider.gd" id="1_tjtlj"]
+
+[node name="AbstractHudDataProvider" type="Node"]
+script = ExtResource("1_tjtlj")

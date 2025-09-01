@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bty04fj4bqraf"]
+
+[ext_resource type="PackedScene" uid="uid://bh0o34eng1gvb" path="res://addons/brennys-game-manager/hud/abstract_hud.tscn" id="1_hrhue"]
+[ext_resource type="Script" uid="uid://bjdccyv58il0k" path="res://demo-game/game-logic/ui/hud/timer_hud.gd" id="2_l8g0c"]
+[ext_resource type="Script" uid="uid://dmtuyk5p8qatt" path="res://addons/brennys-game-manager/hud/abstract_hud_data_provider.gd" id="3_pkhn8"]
+
+[node name="TimerHud" node_paths=PackedStringArray("data_provider") instance=ExtResource("1_hrhue")]
+z_index = 15
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_l8g0c")
+data_provider = NodePath("AbstractHudDataProvider")
+hudName = "timer_hud"
+
+[node name="AbstractHudDataProvider" type="Node" parent="." index="0"]
+script = ExtResource("3_pkhn8")
+trackedValueName = "hud_timer_time"
+metadata/_custom_type_script = "uid://dmtuyk5p8qatt"
+
+[node name="TimeLabel" type="Label" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -172.0
+offset_bottom = 76.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 55
+text = "I exist!"
