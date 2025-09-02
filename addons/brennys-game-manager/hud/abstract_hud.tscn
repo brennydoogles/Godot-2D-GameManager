@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh0o34eng1gvb"]
+
+[ext_resource type="Script" uid="uid://r2r6f1lhe04m" path="res://addons/brennys-game-manager/hud/abstract_hud.gd" id="1_jau6i"]
+
+[node name="AbstractHud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jau6i")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
