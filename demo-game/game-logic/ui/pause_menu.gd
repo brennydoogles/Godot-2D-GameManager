@@ -1,7 +1,5 @@
 extends AbstractMenu
 
-@export var menu_name : StringName
-
 func _on_resume_button_pressed() -> void:
 	GameStateEvents.CLOSE_MENU_REQUESTED.emit()
 

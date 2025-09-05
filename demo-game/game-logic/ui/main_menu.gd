@@ -1,7 +1,5 @@
 extends AbstractMenu
 
-@export var menu_name : StringName
-
 func _on_quit_button_pressed() -> void:
 	get_tree().quit(0)
 
