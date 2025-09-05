@@ -1,10 +1,9 @@
 extends AbstractMenu
 
-
+@export var menu_name : StringName
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit(0)
-
 
 func _on_play_button_pressed() -> void:
 	GameStateEvents.LEVEL_CHANGE_REQUESTED.emit("test_level", "fade_to_black", "default")

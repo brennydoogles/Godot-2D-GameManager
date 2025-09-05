@@ -3,7 +3,7 @@ extends Node
 @warning_ignore_start("unused_signal")
 #region Menu Related Signals
 signal SHOW_MENU_REQUESTED(
-	requestedMenu: String
+	requestedMenu: AbstractMenu
 )
 signal CLOSE_MENU_REQUESTED
 signal MENU_OPEN

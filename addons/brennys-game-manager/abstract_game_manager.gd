@@ -8,20 +8,18 @@ extends Node2D
 @export var menu_container: Node
 @export var transition_container: Node
 @export var player: AbstractPlayer
-@export var main_menu: String
+@export var main_menu: AbstractMenu
 @export var levels: Array[LevelKey]
-@export var menus: Array[MenuKey]
 @export var transitions: Array[TransitionKey]
 
 var level_map: Dictionary[String, PackedScene] = {}
-var menu_map: Dictionary[String, PackedScene] = {}
+static var menu_map: Dictionary[String, AbstractMenu] = {}
 var transition_map: Dictionary[String, PackedScene] = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	connect_signals()
 	prep_player()
-	map_menus()
 	map_levels()
 	map_transitions()
 	GameStateEvents.SHOW_MENU_REQUESTED.emit(main_menu)
@@ -34,11 +32,6 @@ func connect_signals() -> void:
 func prep_player() -> void:
 	player.get_parent().remove_child(player)
 
-func map_menus() -> void:
-	for menu in menus:
-		assert(menu.targetScene.instantiate() is AbstractMenu, "Only Scenes which inherit from AbstractMenu can be registered as a menu")
-		menu_map.set(menu.menuName, menu.targetScene)
-
 func map_levels() -> void:
 	for level in levels:
 		assert(level.targetScene.instantiate() is AbstractLevel, "Only Scenes which inherit from AbstractLevel can be registered as a level")
@@ -49,25 +42,14 @@ func map_transitions() -> void:
 		assert(transition.targetScene.instantiate() is AbsctractSceneTransition, "Only Scenes which inherit from AbstractSceneTransition can be registered as a Scene Transition")
 		transition_map.set(transition.transitionName, transition.targetScene)
 
-func handle_show_menu_request(requestedMenu: String) -> void:
-	assert(is_valid_menu(requestedMenu), requestedMenu + " is not a valid Menu")
-	var menu : AbstractMenu = menu_map.get(requestedMenu).instantiate()
-	self.call_deferred("_handle_menu_transition", menu)
+func handle_show_menu_request(requestedMenu: AbstractMenu) -> void:
+	requestedMenu.show()
 
 func handle_close_menu_request() -> void:
 	var menu_container_children := menu_container.get_children()
 	for child in menu_container_children:
 		child.queue_free()
 	GameStateEvents.MENU_CLOSED.emit()
-
-func is_valid_menu(requestedMenu: String) -> bool:
-	return menu_map.has(requestedMenu)
-
-func _handle_menu_transition(newMenu: AbstractMenu) -> void:
-	var menu_container_children := menu_container.get_children()
-	menu_container.call_deferred("add_child", newMenu)
-	for child in menu_container_children:
-		child.queue_free()
 
 func handle_level_change_requested(requestedLevel: String, requestedTransition: String, teleportDestination: String) -> void:
 	change_level(requestedLevel, requestedTransition, teleportDestination)
