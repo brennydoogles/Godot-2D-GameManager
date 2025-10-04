@@ -16,7 +16,7 @@ markdown_book/docs_folder=""
 
 config/name="GameManager"
 run/main_scene="uid://d0lsxr16kke5f"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/image="uid://cjlmqensonh0v"
 config/icon="res://icon.svg"
 
