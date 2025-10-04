@@ -4,7 +4,7 @@ extends Node
 #region HUD Related Signals
 signal SHOW_HUD_REQUESTED(requestedHud: String)
 signal HIDE_HUD_REQUESTED(requestedHud: String)
-signal HUD_VALUE_UPDATED(valueName: String, newValue)
+signal HUD_VALUE_UPDATED(valueName: String, newValue: Variant)
 #endregion
 
 #region Menu Related Signals

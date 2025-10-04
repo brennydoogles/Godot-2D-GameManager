@@ -18,6 +18,7 @@ hudName = "timer_hud"
 [node name="AbstractHudDataProvider" type="Node" parent="." index="0"]
 script = ExtResource("3_pkhn8")
 trackedValueName = "hud_timer_time"
+value = 0
 metadata/_custom_type_script = "uid://dmtuyk5p8qatt"
 
 [node name="TimeLabel" type="Label" parent="." index="1"]
